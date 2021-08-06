@@ -1,0 +1,130 @@
+:root{
+    --lightcolor: #DBD0FF;
+    --darkcolor: #6D687F;
+    --max-width: 80%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+section:nth-child(odd){
+    background: var(--lightcolor);
+    color: var(--darkcolor);
+}
+
+section:nth-child(even){
+    background-color: var(--darkcolor);
+    color: var(--lightcolor);
+}
+
+section:nth-child(odd) a{
+    color: var(--darkcolor);
+    border: 1px var(--darkcolor) solid;
+    transition-property: all;
+    transition-duration: 0.45s;
+    transition-timing-function: ease-in-out;
+    box-shadow: 3px 3px var(--darkcolor);
+    
+}
+
+section:nth-child(even) a{
+    color: var(--lightcolor);
+    border: 1px var(--lightcolor) solid;
+    transition-property: all;
+    transition-duration: 0.45s;
+    transition-timing-function: ease-in-out;
+    box-shadow: 3px 3px var(--lightcolor);
+}
+
+section:nth-child(odd) a:hover{
+    color: var(--lightcolor);
+    background-color: var(--darkcolor);
+    box-shadow: none;
+   
+}
+
+section:nth-child(even) a:hover{
+    color: var(--darkcolor);
+    background-color: var(--lightcolor);
+    box-shadow: none;
+}
+
+.page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    flex-direction: column;
+}
+
+.page > * {
+    max-width: var(--max-width);
+}
+
+.page h1 {
+    font-size: 50px;
+}
+
+.page a {
+    font-size: 15px;
+    padding: 5px 7px;
+    /* border-radius: 12px; */
+    margin: 10px;
+}
+
+.boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxes img {
+    width: 400px;
+    margin: 0 50px;
+}
+
+.boxes button {
+    width: 30px;
+}
+
+#page-1 h1{
+    position: relative;
+    animation: heading 2s forwards ease-out;
+}
+
+#page-1 p{
+    position: relative;
+    animation: paragraph 2s forwards ease-out;
+}
+
+@keyframes heading {
+    from {
+        top: -150px;
+    }
+    to{
+        top:0;
+    }
+}
+
+@keyframes paragraph{
+    from{
+        left: -1200px;
+    }to{
+        left: 0px;
+    }
+}
+
+

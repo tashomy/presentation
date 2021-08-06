@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/05c253dd27.js" crossorigin="anonymous"></script>
+    <title>Presentation</title>
+</head>
+<body>
+    <div class="container">
+        <section id="page-1" class="page">
+        <h1 class="main-header">Welcome To My Presentation</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus necessitatibus modi sapiente, rem tempore reprehenderit laboriosam odit quia ea earum, neque adipisci. Voluptatem similique fuga quia nihil voluptates, consequuntur hic.</p>
+        <div>
+            <a href="#page-2" class="btn btn-primary">Next page <i class="fas fa-arrow-down"></i></a>
+        </div>
+    </section>
+    <section id="page-2" class="page">
+        <h1>Page 2</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus necessitatibus modi sapiente, rem tempore reprehenderit laboriosam odit quia ea earum, neque adipisci. Voluptatem similique fuga quia nihil voluptates, consequuntur hic.</p>
+        <div class="boxes">
+            <a class="w3-button w3-display-left btn btn-primary" onclick="plusDivs(-1)">&#10094;</a>
+            <img class="mySlides" src="./images/ben-maguire-FTYgqLeseI4-unsplash.jpg" alt="nebo">
+            <img class="mySlides" src="./images/daniele-levis-pelusi-Vey6fioB1eI-unsplash.jpg" alt="ne znam">
+            <img class="mySlides" src="./images/eberhard-grossgasteiger-NvesrDbsrL4-unsplash.jpg" alt="ne znam 2">
+            <a class="w3-button w3-display-right btn btn-primary" onclick="plusDivs(+1)">&#10095;</a>
+        </div>
+        <div class="buttons">
+            <a href="#page-3" class="btn btn-primary">Next page <i class="fas fa-arrow-down"></i></a>
+            <a href="#page-1" class="btn btn-primary">Previous page <i class="fas fa-arrow-up"></i></a>
+        </div>
+        
+    </section>
+    <section id="page-3" class="page">
+        <h1>Page 3</h1>
+        <p class="translate">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus necessitatibus modi sapiente, rem tempore reprehenderit laboriosam odit quia ea earum, neque adipisci. Voluptatem similique fuga quia nihil voluptates, consequuntur hic.</p>
+        <div class="buttons">
+            <a href="#page-4" class="btn btn-primary">Next page <i class="fas fa-arrow-down"></i></a>
+            <a href="#page-2" class="btn btn-primary">Previous page <i class="fas fa-arrow-up"></i></a>
+        </div>
+       
+    </section>
+    <section id="page-4" class="page">
+        <h1>Page 4</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus necessitatibus modi sapiente, rem tempore reprehenderit laboriosam odit quia ea earum, neque adipisci. Voluptatem similique fuga quia nihil voluptates, consequuntur hic.</p>
+        <div class="buttons">
+            <a href="#page-5" class="btn btn-primary">Next page <i class="fas fa-arrow-down"></i></a>
+            <a href="#page-3" class="btn btn-primary">Previous page <i class="fas fa-arrow-up"></i></a>
+        </div>
+        
+    </section>
+    <section id="page-5" class="page">
+        <h1>Page 5</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus necessitatibus modi sapiente, rem tempore reprehenderit laboriosam odit quia ea earum, neque adipisci. Voluptatem similique fuga quia nihil voluptates, consequuntur hic.</p>
+        <div class="buttons">
+            <a href="#page-4" class="btn btn-primary">Previous page <i class="fas fa-arrow-up"></i></a>
+            <a href="#page-1" class="btn btn-primary">First page <i class="fas fa-arrow-up"></i></a>
+        </div>
+    </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+        }
+
+       
+        $('.btn').on('click', function(event) {
+            if (this.hash !== '') {
+            event.preventDefault();
+            const hash = this.hash;
+            $('html, body').animate(
+                {
+                scrollTop: $(hash).offset().top
+                },
+                800
+            );
+            }
+        });
+
+    </script>
+    
+</body>
+</html>
